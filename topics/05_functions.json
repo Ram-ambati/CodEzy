@@ -1,0 +1,106 @@
+{
+  "id": "functions",
+  "order": 5,
+  "title": "Functions and Modular Code",
+  "description": "Write reusable functions to organize and simplify your code",
+  "difficulty": "intermediate",
+  "icon": "📞",
+  "estimatedTime": "25 min",
+  "xpReward": 150,
+  "concepts": [
+    {
+      "id": "func_intro",
+      "title": "What are Functions?",
+      "content": "Functions are one of the most powerful tools in programming. They are reusable blocks of code that perform specific tasks.\n\nThe idea behind functions is simple but profoundly important: instead of writing the same code multiple times throughout your program, you write it once in a function and then call that function whenever you need it.\n\nFunctions help you organize your code into logical, manageable pieces. A well-written program isn't just a long list of statements—it's organized into functions that each have a clear purpose. This organization makes code easier to understand, debug, maintain, and extend.\n\nConsider a program that needs to calculate the sum of two numbers multiple times. Without functions, you'd repeat the addition code everywhere. With functions, you write the addition code once and call it whenever needed. This follows the DRY principle: Don't Repeat Yourself.\n\nFunctions also enable code reuse across different parts of your program or even in different programs entirely. If you write a function to sort an array, you can use it in any program that needs sorting. Many programmers build libraries of useful functions they use repeatedly.\n\nFunctions have several key components: a name (which identifies the function), parameters (values the function needs to do its work), a body (the code that performs the task), and a return value (the result the function gives back). Each of these components plays a crucial role.\n\nMastering functions is essential for becoming a good programmer. Functions allow you to solve complex problems by breaking them into smaller, simpler subproblems. Each function solves one small piece of the larger problem. This decomposition strategy is called \"divide and conquer\" and is fundamental to software engineering. Without functions, programs would quickly become incomprehensible as they grow in complexity.",
+      "codeExample": "// Function definition\nint add(int a, int b) {\n    return a + b;\n}\n\n// Function call\nint result = add(5, 3); // result = 8\n\n// Using a function multiple times\nprintf(\"Sum: %d\\n\", add(10, 20)); // Output: 30\nprintf(\"Sum: %d\\n\", add(100, 50)); // Output: 150",
+      "visualization": {
+        "type": "flow",
+        "title": "Function Execution Flow",
+        "description": "How a function call executes step by step",
+        "data": {
+          "steps": [
+            {"label": "Call Function", "description": "add(10, 20)"},
+            {"label": "Parameters Set", "description": "a=10, b=20"},
+            {"label": "Execute Body", "description": "return a + b"},
+            {"label": "Return Result", "description": "result = 30", "hasNext": false}
+          ]
+        }
+      }
+    },
+    {
+      "id": "func_syntax",
+      "title": "Function Syntax",
+      "content": "Functions in C follow a specific syntax that you must understand and follow correctly. The general format is: returnType functionName(parameters) { body }. Each component is important.\n\nThe return type specifies what type of value the function sends back to the caller. Common return types are int, float, double, char, and void. If the return type is void, the function doesn't return any value—it performs an action but doesn't send anything back.\n\nThe function name is an identifier you choose that describes what the function does. Good function names are descriptive: calculateAverage() is better than calc() or f(). The name can contain letters, digits, and underscores, but must start with a letter or underscore.\n\nParameters appear inside parentheses after the function name. Parameters are variables that receive values from the caller. If a function needs no input, you write empty parentheses. If it needs input, you specify the type and name of each parameter, separated by commas.\n\nThe function body is enclosed in curly braces and contains the code that performs the function's task. This is where all the actual work happens. The body can be as simple as one line or as complex as needed, potentially containing loops, conditionals, and other function calls.\n\nBefore you can call a function, the compiler must know about it. You have two options: you can define the function before you use it (definition comes before use), or you can provide a prototype (a declaration that tells the compiler the function exists) before using it and then define it later. A prototype looks like the function definition but ends with a semicolon instead of a body.\n\nWhen you call a function, control transfers to that function. The function executes its code. When it encounters a return statement, it sends the return value back to the caller and returns control to the calling code. If the function's return type is void, it might have a return statement with no value, or no return statement at all.",
+      "codeExample": "// Prototype (declaration)\nint multiply(int x, int y);\n\nint main() {\n    int result = multiply(4, 5); // Call function\n    printf(\"Result: %d\\n\", result);\n    return 0;\n}\n\n// Definition (after main, or before with prototype)\nint multiply(int x, int y) {\n    return x * y;\n}\n\n// Function with no parameters\nvoid printWelcome() {\n    printf(\"Welcome to the program!\\n\");\n}\n\n// Function with multiple parameters returning float\nfloat average(float a, float b, float c) {\n    return (a + b + c) / 3.0;\n}",
+      "visualization": {
+        "type": "table",
+        "title": "Function Components",
+        "description": "Parts of a function definition and their purpose",
+        "config": {
+          "columns": ["component", "example", "purpose"],
+          "columnLabels": ["Component", "Example", "Purpose"]
+        },
+        "data": {
+          "rows": [
+            {"component": "Return Type", "example": "int", "purpose": "Type of value returned"},
+            {"component": "Function Name", "example": "multiply", "purpose": "Identifier for calling"},
+            {"component": "Parameters", "example": "(int x, int y)", "purpose": "Input values from caller"},
+            {"component": "Function Body", "example": "{ ... }", "purpose": "Code that performs task"},
+            {"component": "Return Statement", "example": "return x * y;", "purpose": "Sends result back"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "func_params",
+      "title": "Parameters and Arguments",
+      "content": "Understanding the difference between parameters and arguments is crucial for working with functions effectively. The terms are sometimes used interchangeably, but they actually refer to slightly different things.\n\nParameters are the variables in the function definition. When you write 'int add(int a, int b)', the 'a' and 'b' are parameters. They're like blank variables that will hold values when the function is called. You define parameters in the function's header (the part before the opening brace).\n\nArguments are the actual values you pass when calling the function. When you write 'add(5, 3)', the 5 and 3 are arguments. The function receives these arguments and assigns them to the parameters. So in this call, a=5 and b=3 inside the function.\n\nThe number and type of arguments must match the number and type of parameters. If a function expects two integers and you give it three values or one string, you'll get an error. This type-checking is one of the great features of C—it catches mistakes at compile time rather than allowing them to cause runtime errors.\n\nC passes arguments by value by default. This means a copy of the argument value is created and passed to the function. Changes to parameters inside the function don't affect the original variables outside the function. This is usually what you want, but there are times when you need a function to modify variables outside itself—that's where pointers come in.\n\nFunctions can have no parameters (empty parentheses), one parameter, or multiple parameters. When multiple parameters exist, separate them with commas. You must specify the type for each parameter—you can't write 'function(a, b, c)' without types; it must be something like 'function(int a, int b, int c)'.\n\nSome functions don't need any input because they work on fixed data or perform actions that don't depend on parameters. Other functions need several pieces of information to work properly. Using the right parameters makes your functions flexible and reusable in many different contexts.",
+      "codeExample": "// No parameters\nvoid greet() {\n    printf(\"Hello!\\n\");\n}\n\n// Single parameter\nint square(int n) {\n    return n * n;\n}\n\n// Multiple parameters\nfloat average(int a, int b, int c) {\n    return (a + b + c) / 3.0;\n}\n\n// Using functions with different arguments\nsquare(5);      // Returns 25\nsquare(10);     // Returns 100\naverage(10, 20, 30); // Returns 20.0\naverage(100, 200, 300); // Returns 200.0\n\n// Return type void - no return value\nvoid printSquare(int n) {\n    printf(\"%d squared is %d\\n\", n, n * n);\n}",
+      "visualization": {
+        "type": "trace",
+        "title": "Parameters vs Arguments",
+        "description": "How arguments are passed and assigned to parameters",
+        "data": {
+          "steps": [
+            {"line": 1, "code": "square(5);", "variables": {"n": "undefined"}},
+            {"line": 2, "code": "Function called with argument 5", "variables": {"n": "5"}},
+            {"line": 3, "code": "return n * n;", "variables": {"n": "5", "result": "25"}},
+            {"line": 4, "code": "Return to caller", "variables": {"return_value": "25"}}
+          ]
+        }
+      }
+    }
+  ],
+  "codeEditor": {
+    "defaultCode": "#include <stdio.h>\n\n// Function to calculate area of rectangle\nint area(int length, int width) {\n    return length * width;\n}\n\n// Function to check if number is even\nint isEven(int n) {\n    return n % 2 == 0;\n}\n\nint main() {\n    printf(\"Area: %d\\n\", area(5, 10));\n    printf(\"Is 4 even? %s\\n\", isEven(4) ? \"Yes\" : \"No\");\n    \n    return 0;\n}",
+    "language": "c"
+  },
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Power Function",
+      "description": "Write a function power(int base, int exp) that returns base raised to exp power",
+      "hints": [
+        "Use a loop or recursion",
+        "Return type: int",
+        "2^3 = 8"
+      ],
+      "solution": "int power(int base, int exp) {\n    int result = 1;\n    for(int i = 0; i < exp; i++) {\n        result *= base;\n    }\n    return result;\n}"
+    },
+    {
+      "id": "challenge_2",
+      "title": "Prime Checker",
+      "description": "Write a function isPrime(int n) that returns 1 if prime, 0 if not",
+      "hints": [
+        "Numbers < 2 are not prime",
+        "Check divisibility up to sqrt(n)",
+        "Return 1 or 0"
+      ],
+      "solution": "int isPrime(int n) {\n    if(n < 2) return 0;\n    for(int i = 2; i * i <= n; i++) {\n        if(n % i == 0) return 0;\n    }\n    return 1;\n}"
+    }
+  ],
+  "achievements": [
+    "Function Expert",
+    "Code Architect"
+  ]
+}

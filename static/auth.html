@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  
+  <title>Codezy - Sign In & Sign Up</title>
+  <meta name="description" content="Sign in or create an account to start learning programming with Codezy." />
+  <meta name="theme-color" content="#0f172a" />
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%230ea5e9' font-weight='bold'>C</text></svg>" />
+  
+  <link rel="stylesheet" href="/css/auth.css" />
+</head>
+<body>
+
+  <!-- Animated Background -->
+  <div class="animated-bg"></div>
+
+  <!-- Main Container -->
+  <div class="auth-container">
+    
+    <!-- Left Section: Brand & Social Buttons -->
+    <div class="brand-section">
+      <div class="brand-logo">
+        <i class="fas fa-code"></i>
+        <h1>Codezy</h1>
+        <p class="brand-tagline">Master Programming with AI</p>
+      </div>
+
+      <!-- Social Buttons (Left Side) -->
+      <div class="social-buttons">
+        <button class="social-btn google-btn" title="Continue with Google">
+          <i class="fab fa-google"></i>
+          <span>Google</span>
+        </button>
+        <button class="social-btn github-btn" title="Continue with GitHub">
+          <i class="fab fa-github"></i>
+          <span>GitHub</span>
+        </button>
+        <button class="social-btn microsoft-btn" title="Continue with Microsoft">
+          <i class="fab fa-microsoft"></i>
+          <span>Microsoft</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Section: Auth Card -->
+    <div class="auth-card">
+    <div class="auth-form-wrapper">
+      
+      <!-- Tab Navigation -->
+      <div class="auth-tabs">
+        <button class="tab-btn active" data-tab="login">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+        <button class="tab-btn" data-tab="signup">
+          <i class="fas fa-user-plus"></i> Sign Up
+        </button>
+      </div>
+
+      <!-- Login Form -->
+      <div id="login-tab" class="auth-form active">
+        <h2 class="form-title">Welcome Back</h2>
+        <p class="form-subtitle">Sign in to continue learning</p>
+
+        <form id="login-form" class="form">
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="login-email" class="form-label">
+              <i class="fas fa-envelope"></i> Email Address
+            </label>
+            <input 
+              type="email" 
+              id="login-email" 
+              class="form-input" 
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <label for="login-password" class="form-label">
+              <i class="fas fa-lock"></i> Password
+            </label>
+            <div class="password-wrapper">
+              <input 
+                type="password" 
+                id="login-password" 
+                class="form-input" 
+                placeholder="••••••••"
+                required
+                autocomplete="current-password"
+              />
+              <button type="button" class="toggle-password" data-target="login-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Remember Me -->
+          <div class="form-group checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="remember-me" />
+              <span class="checkmark"></span>
+              <span class="label-text">Remember me</span>
+            </label>
+            <button type="button" class="forgot-password-btn" id="forgot-password-btn">
+              Forgot password?
+            </button>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-large btn-primary auth-btn">
+            <span class="btn-text">Sign In</span>
+            <span class="btn-loader">
+              <i class="fas fa-spinner"></i>
+            </span>
+          </button>
+        </form>
+
+        <!-- Sign Up Link -->
+        <p class="auth-footer">
+          Don't have an account? <button class="link-btn" data-tab="signup">Sign up here</button>
+        </p>
+      </div>
+
+      <!-- Signup Form -->
+      <div id="signup-tab" class="auth-form">
+        <h2 class="form-title">Create Account</h2>
+        <p class="form-subtitle">Start your learning journey today</p>
+
+        <form id="signup-form" class="form">
+          <!-- Full Name -->
+          <div class="form-group">
+            <label for="signup-name" class="form-label">
+              <i class="fas fa-user"></i> Full Name
+            </label>
+            <input 
+              type="text" 
+              id="signup-name" 
+              class="form-input" 
+              placeholder="John Doe"
+              required
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Email Input -->
+          <div class="form-group">
+            <label for="signup-email" class="form-label">
+              <i class="fas fa-envelope"></i> Email Address
+            </label>
+            <input 
+              type="email" 
+              id="signup-email" 
+              class="form-input" 
+              placeholder="you@example.com"
+              required
+              autocomplete="email"
+            />
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Password Input -->
+          <div class="form-group">
+            <label for="signup-password" class="form-label">
+              <i class="fas fa-lock"></i> Password
+            </label>
+            <div class="password-wrapper">
+              <input 
+                type="password" 
+                id="signup-password" 
+                class="form-input" 
+                placeholder="••••••••"
+                required
+                autocomplete="new-password"
+              />
+              <button type="button" class="toggle-password" data-target="signup-password">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <div class="password-strength-bar">
+              <div class="strength-fill"></div>
+            </div>
+            <span class="error-message"></span>
+            <span class="strength-text"></span>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="form-group">
+            <label for="signup-confirm" class="form-label">
+              <i class="fas fa-check-circle"></i> Confirm Password
+            </label>
+            <div class="password-wrapper">
+              <input 
+                type="password" 
+                id="signup-confirm" 
+                class="form-input" 
+                placeholder="••••••••"
+                required
+                autocomplete="new-password"
+              />
+              <button type="button" class="toggle-password" data-target="signup-confirm">
+                <i class="fas fa-eye"></i>
+              </button>
+            </div>
+            <span class="error-message"></span>
+          </div>
+
+          <!-- Terms & Conditions -->
+          <div class="form-group checkbox-group">
+            <label class="custom-checkbox">
+              <input type="checkbox" id="terms-checkbox" required />
+              <span class="checkmark"></span>
+              <span class="label-text">
+                I agree to the <button type="button" class="terms-link">Terms & Conditions</button>
+              </span>
+            </label>
+          </div>
+
+          <!-- Submit Button -->
+          <button type="submit" class="btn btn-large btn-primary auth-btn">
+            <span class="btn-text">Create Account</span>
+            <span class="btn-loader">
+              <i class="fas fa-spinner"></i>
+            </span>
+          </button>
+        </form>
+
+        <!-- Sign In Link -->
+        <p class="auth-footer">
+          Already have an account? <button class="link-btn" data-tab="login">Sign in here</button>
+        </p>
+      </div>
+
+      </div>
+    </div>
+    </div>
+
+    <!-- Back to Home Link -->
+    <a href="/index.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Home
+    </a>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div id="forgot-password-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3>Reset Your Password</h3>
+      <p>Enter your email address and we'll send you instructions to reset your password.</p>
+      
+      <form id="forgot-password-form" class="form">
+        <div class="form-group">
+          <label for="reset-email" class="form-label">
+            <i class="fas fa-envelope"></i> Email Address
+          </label>
+          <input 
+            type="email" 
+            id="reset-email" 
+            class="form-input" 
+            placeholder="you@example.com"
+            required
+          />
+          <span class="error-message"></span>
+        </div>
+        
+        <button type="submit" class="btn btn-large btn-primary">
+          <span class="btn-text">Send Reset Link</span>
+          <span class="btn-loader">
+            <i class="fas fa-spinner"></i>
+          </span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Terms & Conditions Modal -->
+  <div id="terms-modal" class="modal">
+    <div class="modal-content modal-large">
+      <button class="modal-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3>Terms & Conditions</h3>
+      <div class="modal-body">
+        <h4>1. Introduction</h4>
+        <p>Welcome to Codezy. These terms and conditions govern your use of our platform.</p>
+        
+        <h4>2. User Responsibilities</h4>
+        <p>You are responsible for maintaining the confidentiality of your account and password.</p>
+        
+        <h4>3. Acceptable Use</h4>
+        <p>You agree not to use the platform for any unlawful purposes or in violation of any laws.</p>
+        
+        <h4>4. Intellectual Property</h4>
+        <p>All content on Codezy is protected by copyright laws.</p>
+        
+        <h4>5. Limitation of Liability</h4>
+        <p>Codezy is provided on an "as is" basis without warranties.</p>
+      </div>
+      <button class="btn btn-primary" id="accept-terms-btn">I Agree</button>
+    </div>
+  </div>
+
+  <!-- Notification Toast -->
+  <div id="notification-toast" class="toast"></div>
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>

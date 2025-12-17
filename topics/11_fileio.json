@@ -1,0 +1,62 @@
+{
+  "id": "fileio",
+  "order": 11,
+  "title": "File Input/Output",
+  "description": "Read from and write to files to persist data beyond program execution",
+  "difficulty": "advanced",
+  "xpReward": 200,
+  "estimatedTime": "30 min",
+  "icon": "📁",
+
+  "concepts": [
+    {
+      "id": "file_basics",
+      "title": "Understanding Files",
+      "content": "Files allow you to store data permanently on disk. While variables in your program exist only while the program runs, data written to files persists after your program ends.\n\nIn C, you work with files using FILE pointers. A FILE pointer is a special variable that represents a connection to a file. You create a FILE pointer with the declaration: FILE *fp;. The asterisk indicates it's a pointer to a FILE structure.\n\nTo open a file, you use fopen(): FILE *fp = fopen(\"filename.txt\", \"r\");. The first argument is the file name, and the second is the mode. Common modes are:\n- \"r\" for reading (file must exist)\n- \"w\" for writing (creates new file or overwrites existing)\n- \"a\" for appending (adds to end of existing file)\n- \"rb\", \"wb\", \"ab\" for binary modes\n\nfopen() returns a FILE pointer if successful, or NULL if it fails. Always check if fopen() succeeded before using the file pointer.\n\nWhen you're done with a file, you must close it with fclose(fp);. This ensures all data is written and resources are released.\n\nWorking with files is essential for real-world programs that need to store and retrieve data. Almost every program deals with files in some way, whether reading configuration files, saving user data, or processing text documents.",
+      "codeExample": "#include <stdio.h>\n\nint main() {\n    FILE *fp = fopen(\"output.txt\", \"w\");\n    \n    if (fp == NULL) {\n        printf(\"Error opening file!\\n\");\n        return 1;\n    }\n    \n    fprintf(fp, \"Hello, File!\\n\");\n    fprintf(fp, \"This is line 2\\n\");\n    \n    fclose(fp);\n    return 0;\n}"
+    },
+    {
+      "id": "file_read_write",
+      "title": "Reading and Writing Files",
+      "content": "Once you have a file open, you can read from or write to it using special functions.\n\nFor writing, fprintf() works like printf() but writes to a file: fprintf(fp, \"Number: %d\\n\", 42);. You provide the FILE pointer as the first argument, then the format string and values, just like printf().\n\nAnother write function is fputs(): fputs(\"Hello\\n\", fp); writes a string to the file.\n\nFor reading, fgets() reads a line from a file: fgets(buffer, size, fp); reads up to size-1 characters from the file into buffer, stopping at newline or end of file. fgets() includes the newline character in the buffer if there's room.\n\nfscanf() reads formatted data from a file: fscanf(fp, \"%d\", &number); reads an integer from the file, similar to scanf() but from a file.\n\nfgetc() reads a single character: int c = fgetc(fp); reads one character, or EOF if end of file.\n\nCommon pattern for reading entire file line by line:\nwhile (fgets(buffer, size, fp) != NULL) { /* process line */ }\n\nFile I/O is fundamental for data persistence. Whether reading configuration files, processing data files, or saving results, understanding file operations is essential for practical programming.",
+      "codeExample": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    FILE *fp = fopen(\"data.txt\", \"r\");\n    char line[100];\n    \n    if (fp == NULL) {\n        printf(\"Error opening file!\\n\");\n        return 1;\n    }\n    \n    // Read and print each line\n    while (fgets(line, sizeof(line), fp) != NULL) {\n        printf(\"%s\", line);\n    }\n    \n    fclose(fp);\n    return 0;\n}"
+    },
+    {
+      "id": "file_modes",
+      "title": "File Modes and Error Handling",
+      "content": "Understanding file modes is important for using files correctly. Each mode has different behavior:\n\nRead mode \"r\" opens an existing file for reading. If the file doesn't exist, fopen() returns NULL. This mode doesn't change the file.\n\nWrite mode \"w\" creates a new file or truncates (empties) an existing file. Data can be written to the file.\n\nAppend mode \"a\" opens a file for writing at the end. If the file doesn't exist, it's created. New data is added to the end without removing existing content.\n\nBinary modes \"rb\", \"wb\", \"ab\" are similar but for binary data. Use text modes for text files and binary modes for other data formats.\n\nAlways check if fopen() succeeded: if (fp == NULL) { /* handle error */ }. Opening fails if the file doesn't exist (for read mode) or if you don't have permission to access the file.\n\nWhen reading, check the return value of fgets() or fscanf() to know when you've reached the end of file.\n\nProper error handling is crucial for robust programs. Files may not exist, you may lack permissions, or disk space might be full. Always anticipate and handle these possibilities.",
+      "codeExample": "#include <stdio.h>\n\nint main() {\n    FILE *fp = fopen(\"output.txt\", \"a\");  // Append mode\n    \n    if (fp == NULL) {\n        printf(\"Cannot open file!\\n\");\n        return 1;\n    }\n    \n    fprintf(fp, \"Appended line\\n\");\n    \n    if (fclose(fp) == EOF) {\n        printf(\"Error closing file\\n\");\n        return 1;\n    }\n    \n    return 0;\n}"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Work with Files",
+    "description": "Read and write files in C",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    // Write to file\n    FILE *fp = fopen(\"test.txt\", \"w\");\n    if (fp != NULL) {\n        fprintf(fp, \"Line 1\\n\");\n        fprintf(fp, \"Line 2\\n\");\n        fclose(fp);\n    }\n    \n    // Read from file\n    fp = fopen(\"test.txt\", \"r\");\n    char line[50];\n    if (fp != NULL) {\n        while (fgets(line, sizeof(line), fp) != NULL) {\n            printf(\"%s\", line);\n        }\n        fclose(fp);\n    }\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Always check if fopen() returned NULL",
+      "Use fprintf() to write formatted data",
+      "Use fgets() to read lines",
+      "Close files with fclose()"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Write and Read",
+      "difficulty": "intermediate",
+      "description": "Write numbers to a file and read them back",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    // TODO: Write numbers 1, 2, 3 to a file\n    \n    // TODO: Read and print those numbers\n    \n    return 0;\n}",
+      "hints": [
+        "Open file in \"w\" mode for writing",
+        "Use fprintf(fp, \"%d\\n\", number)",
+        "Open file in \"r\" mode for reading",
+        "Use fscanf(fp, \"%d\", &number) to read"
+      ],
+      "solution": "FILE *fp = fopen(\"nums.txt\", \"w\");\nfor (int i = 1; i <= 3; i++) {\n    fprintf(fp, \"%d\\n\", i);\n}\nfclose(fp);",
+      "expectedOutput": "1\\n2\\n3"
+    }
+  ]
+}

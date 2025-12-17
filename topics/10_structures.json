@@ -1,0 +1,61 @@
+{
+  "id": "structures",
+  "order": 10,
+  "title": "Structures: Organizing Data",
+  "description": "Create custom data types using structures to group related variables",
+  "difficulty": "intermediate",
+  "xpReward": 150,
+  "estimatedTime": "25 min",
+  "icon": "🏗️",
+
+  "concepts": [
+    {
+      "id": "struct_basics",
+      "title": "Understanding Structures",
+      "content": "A structure is a user-defined data type that groups multiple variables of different types together. Unlike arrays, which hold elements of the same type, structures can combine different types—integers, floats, characters, strings, and even other structures.\n\nYou define a structure using the struct keyword: struct Person { int age; float height; char initial; };. This creates a new type called Person. Inside the curly braces, you declare the members (or fields) of the structure—the variables that make up the structure.\n\nOnce you've defined a structure type, you can declare variables of that type: struct Person person1;. This creates a variable person1 of type struct Person, which contains all the members you defined.\n\nTo access members of a structure, you use the dot operator: person1.age = 25; sets the age member, and printf(\"%d\\n\", person1.age); prints it.\n\nYou can initialize a structure when you declare it: struct Person person1 = {25, 5.9, 'A'};. The values are assigned to members in order.\n\nStructures are useful for creating meaningful groupings of related data. Instead of having separate variables age, height, and initial scattered throughout your code, you group them in a Person structure, making your code more organized and readable.",
+      "codeExample": "struct Person {\n    int age;\n    float height;\n    char initial;\n};\n\nstruct Person person1;\nperson1.age = 25;\nperson1.height = 5.9;\nperson1.initial = 'A';\n\nprintf(\"Age: %d\\n\", person1.age);\nprintf(\"Height: %.1f\\n\", person1.height);\nprintf(\"Initial: %c\\n\", person1.initial);"
+    },
+    {
+      "id": "struct_arrays",
+      "title": "Arrays of Structures",
+      "content": "Just like you can have arrays of integers or arrays of characters, you can have arrays of structures. This is incredibly useful for managing collections of related objects.\n\nTo declare an array of structures: struct Person people[3]; creates an array of 3 Person structures. Each element in the array is a complete structure with all its members.\n\nTo access members of a structure in an array, you combine array indexing with the dot operator: people[0].age = 25; sets the age member of the first person.\n\nYou can iterate through arrays of structures using loops, processing each structure one at a time. This pattern is used constantly in real programs for managing lists of employees, students, inventory items, and any other entities.\n\nArrays of structures are powerful because they let you manage groups of objects efficiently. Instead of having separate arrays for ages, heights, and initials, you have one array of Person structures where each element contains all the information about one person.",
+      "codeExample": "struct Person {\n    int age;\n    float height;\n};\n\nstruct Person people[3] = {\n    {25, 5.9},\n    {30, 6.1},\n    {22, 5.5}\n};\n\n// Access elements\nprintf(\"%d\\n\", people[0].age);  // 25\npeople[1].height = 6.2;\n\n// Iterate through array\nfor (int i = 0; i < 3; i++) {\n    printf(\"Person %d: age=%d, height=%.1f\\n\", i, people[i].age, people[i].height);\n}"
+    },
+    {
+      "id": "struct_functions",
+      "title": "Passing Structures to Functions",
+      "content": "You can pass structures to functions just like any other data type. This allows you to write functions that operate on structures.\n\nYou can pass a structure by value: void printPerson(struct Person p) { printf(\"%d\\n\", p.age); };. This passes a copy of the structure, so changes inside the function don't affect the original.\n\nYou can also pass a structure by pointer: void setPerson(struct Person *p, int age) { p->age = age; };. When passing by pointer, you use the arrow operator (->) instead of the dot operator to access members. This is more efficient for large structures because you're only passing an address rather than copying the entire structure.\n\nFunctions can return structures: struct Person createPerson(int age, float height) { struct Person p; p.age = age; p.height = height; return p; };. This allows functions to construct and return structures.\n\nUnderstanding how to use structures with functions is important for writing modular, organized code. Functions that work with structures encapsulate operations on those structures, making your code more maintainable.",
+      "codeExample": "struct Person { int age; float height; };\n\nvoid printPerson(struct Person p) {\n    printf(\"Age: %d, Height: %.1f\\n\", p.age, p.height);\n}\n\nvoid changePerson(struct Person *p, int newAge) {\n    p->age = newAge;\n}\n\nstruct Person createPerson(int a, float h) {\n    struct Person p = {a, h};\n    return p;\n}\n\nint main() {\n    struct Person p = createPerson(25, 5.9);\n    printPerson(p);\n    changePerson(&p, 26);\n    printPerson(p);\n}"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Work with Structures",
+    "description": "Create and use structures to organize data",
+    "defaultCode": "#include <stdio.h>\n\nstruct Student {\n    int id;\n    float gpa;\n    char grade;\n};\n\nint main() {\n    struct Student s1 = {101, 3.85, 'A'};\n    struct Student s2 = {102, 3.60, 'B'};\n    \n    printf(\"Student %d: GPA=%.2f, Grade=%c\\n\", s1.id, s1.gpa, s1.grade);\n    printf(\"Student %d: GPA=%.2f, Grade=%c\\n\", s2.id, s2.gpa, s2.grade);\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Define struct before main()",
+      "Use struct keyword to declare structure types",
+      "Use dot operator to access members",
+      "You can initialize structures when declaring"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Create a Structure",
+      "difficulty": "easy",
+      "description": "Define a Book structure and print its members",
+      "starterCode": "#include <stdio.h>\n\n// TODO: Define a Book structure with title, author, and year\n\nint main() {\n    // Create and initialize a book\n    struct Book book = {\"The C Programming Language\", \"Kernighan & Ritchie\", 1988};\n    \n    // TODO: Print the book details\n    \n    return 0;\n}",
+      "hints": [
+        "Use struct keyword",
+        "Include string field: char title[50]",
+        "Use dot notation to access members"
+      ],
+      "solution": "struct Book {\n    char title[50];\n    char author[30];\n    int year;\n};\n\nprintf(\"%s by %s (%d)\\n\", book.title, book.author, book.year);",
+      "expectedOutput": "The C Programming Language by Kernighan & Ritchie (1988)"
+    }
+  ]
+}

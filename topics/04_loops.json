@@ -1,0 +1,106 @@
+{
+  "id": "loops",
+  "order": 4,
+  "title": "Loops and Iteration",
+  "description": "Master loops: for, while, and do-while loops for repetitive tasks",
+  "difficulty": "beginner",
+  "icon": "🔄",
+  "estimatedTime": "20 min",
+  "xpReward": 100,
+  "concepts": [
+    {
+      "id": "loop_intro",
+      "title": "Why Loops?",
+      "content": "Loops are one of the most fundamental control structures in programming. They allow you to execute a block of code multiple times, which is essential for writing efficient and practical programs. Without loops, if you wanted to print the numbers 1 through 100, you would need to write 100 separate printf() statements—clearly impractical and prone to errors.\n\nLoops solve this problem elegantly by allowing you to write code once and have it execute repeatedly. This concept is called iteration or repetition. There are three main types of loops in C: the for loop, the while loop, and the do-while loop. Each has its own purpose and is best suited for different situations.\n\nThe fundamental principle behind all loops is the same: they check a condition, and if that condition is true, they execute a block of code, then repeat the process. When the condition becomes false, the loop terminates and the program continues with the next statement after the loop.\n\nLoops are absolutely essential for practical programming. They allow you to process arrays with thousands of elements without writing thousands of lines of code. They enable you to implement searching and sorting algorithms, process user input, display menus repeatedly, and handle countless other repetitive tasks that are common in real programs.\n\nUnderstanding loops deeply is crucial because nearly every program you write will use them. You'll use loops to iterate through data, count occurrences, accumulate values, validate input, display formatted output, and much more. The ability to write efficient loops is a cornerstone skill that distinguishes competent programmers from those just learning the basics.\n\nLoops also introduce you to an important programming concept called iteration variables (often named i, j, k). These variables track which iteration of the loop you're currently in. Understanding how to use and update these variables correctly is essential for using loops effectively. Additionally, loops can be nested—placing one loop inside another—which allows you to create complex patterns and process multi-dimensional data structures like matrices.",
+      "codeExample": "// Without loop - repetitive\nprintf(\"1 \");\nprintf(\"2 \");\nprintf(\"3 \");\n\n// With loop - clean\nfor(int i = 1; i <= 3; i++) {\n    printf(\"%d \", i);\n}",
+      "visualization": {
+        "type": "flow",
+        "title": "Loop Execution Pattern",
+        "description": "How loops check conditions and repeat",
+        "data": {
+          "steps": [
+            {"label": "Initialize", "description": "Set up counter (i=0)"},
+            {"label": "Check Condition", "condition": "i < 5?"},
+            {"label": "Execute Body", "description": "Run loop code"},
+            {"label": "Update", "description": "Increment counter (i++)"},
+            {"label": "Repeat or Exit", "description": "Go back to check", "hasNext": false}
+          ]
+        }
+      }
+    },
+    {
+      "id": "for_loop",
+      "title": "For Loop",
+      "content": "The for loop is the most commonly used loop in C and is typically your first choice when you know exactly how many times you need to repeat a block of code. The structure of a for loop is carefully designed to make iteration clear and manageable: for(initialization; condition; increment) { /* code */ }.\n\nThe initialization part is executed once at the very beginning of the loop. This is where you typically declare and initialize a loop counter variable, often named 'i'. For example, 'int i = 0' sets i to zero. This variable tracks which iteration you're currently on.\n\nThe condition is checked before each iteration. If the condition is true, the loop body executes. If it's false, the loop terminates immediately. Commonly, you'll see conditions like 'i < 10' (continue while i is less than 10) or 'i <= 100' (continue while i is less than or equal to 100).\n\nThe increment/update part executes after each iteration of the loop body. This is typically where you increase the loop counter, most commonly with 'i++' (which increments i by 1). However, you could also use 'i += 2' to increment by 2, or even 'i--' to decrement.\n\nFor loops are ideal for iterating through arrays. If you have an array of 100 integers and want to process each one, a for loop makes this trivial: for(int i = 0; i < 100; i++). You can then access each element as arr[i]. This pattern appears constantly in real programs.\n\nNested for loops allow you to create complex patterns and process multi-dimensional structures. For example, printing a 2D grid or multiplication table requires nested loops. Understanding how to nest loops correctly is an important skill because many real-world problems require processing data that has multiple levels of iteration.",
+      "codeExample": "// Print numbers 0 to 9\nfor(int i = 0; i < 10; i++) {\n    printf(\"%d \", i);\n}\n\n// Iterate through array\nint arr[5] = {1, 2, 3, 4, 5};\nfor(int i = 0; i < 5; i++) {\n    printf(\"%d \", arr[i]);\n}\n\n// Nested loops - times table\nfor(int i = 1; i <= 3; i++) {\n    for(int j = 1; j <= 3; j++) {\n        printf(\"%d \", i * j);\n    }\n    printf(\"\\n\");\n}",
+      "visualization": {
+        "type": "table",
+        "title": "For Loop Components",
+        "description": "Parts of a for loop and their function",
+        "config": {
+          "columns": ["part", "example", "description"],
+          "columnLabels": ["Part", "Example", "Description"]
+        },
+        "data": {
+          "rows": [
+            {"part": "Initialization", "example": "int i = 0", "description": "Set up counter variable"},
+            {"part": "Condition", "example": "i < 10", "description": "Check before each iteration"},
+            {"part": "Increment", "example": "i++", "description": "Update counter after body"},
+            {"part": "Body", "example": "printf(...)", "description": "Code executed each iteration"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "while_loop",
+      "title": "While Loop",
+      "content": "The while loop is used when you need to repeat code but you don't know in advance exactly how many times the repetition will occur. The syntax is simple: while(condition) { /* code */ }. The loop continues executing as long as the condition remains true.\n\nUnlike for loops which have built-in mechanisms for incrementing a counter, while loops require you to manually manage your condition. This means you need to be careful to ensure the loop will eventually terminate, otherwise you'll have an infinite loop where the program gets stuck.\n\nWhile loops are commonly used for situations like: waiting for valid user input (keep asking until the user enters valid data), processing data until a sentinel value is encountered (continue reading numbers until you see -1), or continuing a simulation until a certain state is reached.\n\nWhen using a while loop, you must ensure three things: the condition is established before the loop, the loop body contains code that modifies the condition, and the loop will eventually terminate. For example, reading user input in a loop requires you to set up an initial value for your condition, then read new input inside the loop that updates the condition.\n\nThe key difference between while and for loops is philosophical. Use a for loop when you know exactly how many iterations are needed. Use a while loop when the number of iterations depends on the data or runtime behavior of your program. While loops give you more flexibility but require more careful programming to avoid errors.",
+      "codeExample": "int x = 5;\nwhile(x > 0) {\n    printf(\"%d \", x);\n    x--;\n}\n// Output: 5 4 3 2 1\n\n// Reading user input until valid\nint age = -1;\nwhile(age < 0 || age > 150) {\n    printf(\"Enter your age: \");\n    scanf(\"%d\", &age);\n}\n\n// Continue until sentinel value\nint num;\nwhile(scanf(\"%d\", &num) == 1 && num != -1) {\n    printf(\"You entered: %d\\n\", num);\n}",
+      "visualization": {
+        "type": "flow",
+        "title": "While Loop Control Flow",
+        "description": "How while loop decides to continue or stop",
+        "data": {
+          "steps": [
+            {"label": "Check Condition", "condition": "condition true?"},
+            {"label": "Execute Body", "description": "Run loop code"},
+            {"label": "Update Condition", "description": "Modify condition variable"},
+            {"label": "Loop Back", "description": "Return to condition check", "hasNext": false}
+          ]
+        }
+      }
+    }
+  ],
+  "codeEditor": {
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    // For loop: multiplication table\n    printf(\"Multiplication table of 5:\\n\");\n    for(int i = 1; i <= 10; i++) {\n        printf(\"5 x %d = %d\\n\", i, 5 * i);\n    }\n    \n    return 0;\n}",
+    "language": "c"
+  },
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Print Pattern",
+      "description": "Use a for loop to print a pyramid pattern:\n*\n**\n***\n****\n*****",
+      "hints": [
+        "Use nested loops",
+        "Outer loop: 5 iterations",
+        "Inner loop: i stars per row"
+      ],
+      "solution": "for(int i = 1; i <= 5; i++) {\n    for(int j = 0; j < i; j++) {\n        printf(\"*\");\n    }\n    printf(\"\\n\");\n}"
+    },
+    {
+      "id": "challenge_2",
+      "title": "Sum Array Elements",
+      "description": "Write a loop to sum all elements in an array [10, 20, 30, 40, 50]",
+      "hints": [
+        "Initialize sum = 0",
+        "Loop through each element",
+        "Add to sum"
+      ],
+      "solution": "int arr[5] = {10, 20, 30, 40, 50};\nint sum = 0;\nfor(int i = 0; i < 5; i++) {\n    sum += arr[i];\n}\nprintf(\"Sum: %d\\n\", sum);"
+    }
+  ],
+  "achievements": [
+    "Loop Master",
+    "Pattern Creator"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "basics",
+  "order": 1,
+  "title": "Getting Started with C",
+  "description": "Learn the fundamentals of C programming and write your first program",
+  "difficulty": "beginner",
+  "xpReward": 100,
+  "estimatedTime": "20 min",
+  "icon": "🚀",
+
+  "concepts": [
+    {
+      "id": "history",
+      "title": "What is C?",
+      "content": "C is a powerful, general-purpose programming language created by Dennis Ritchie in the early 1970s. It has become one of the most influential programming languages ever created, serving as the foundation for many modern languages like C++, C#, and Java.\n\nC is known for being relatively simple yet incredibly powerful. It gives you direct access to memory through pointers and allows you to manipulate the computer at a low level, which makes it perfect for systems programming, embedded systems, and performance-critical applications. Operating systems like Linux and Unix were written in C, and much of the software that powers the modern internet was built with C.\n\nWhat makes C special is its balance between simplicity and power. The language has only a small set of keywords and basic constructs, but it allows experienced programmers to write highly optimized code. This means that learning C teaches you fundamental programming concepts that apply to almost all programming languages.",
+      "codeExample": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello, C World!\\n\");\n    return 0;\n}"
+    },
+    {
+      "id": "setup",
+      "title": "Setting Up Your Environment",
+      "content": "Before you can write C code, you need a C compiler. A compiler is a program that translates your human-readable C code into machine code that your computer can execute.\n\nThere are several popular C compilers available:\n\nGCC (GNU Compiler Collection) is the most popular open-source compiler, available on Linux, macOS, and Windows. It's free, reliable, and widely used in professional development. On Linux systems, you can usually install it with your package manager. On Windows, you can use MinGW (Minimalist GNU for Windows) or download pre-built binaries.\n\nClang is another excellent open-source compiler that's known for producing clear error messages and fast compilation. It's the default compiler on macOS and is also available on Linux and Windows.\n\nVisual Studio provides MSVC (Microsoft Visual C++), a commercial-grade compiler with excellent debugging tools, though it's primarily for Windows development.\n\nFor this course, we recommend using GCC or Clang as they're freely available across all platforms. You'll also need a text editor or IDE. Simple options include VS Code, Sublime Text, or Notepad++. More feature-rich IDEs include Code::Blocks, Dev-C++, or Visual Studio Community (free tier).",
+      "codeExample": "// To compile your program:\n// gcc -o program program.c\n// To run your program:\n// ./program (on Linux/Mac)\n// program.exe (on Windows)"
+    },
+    {
+      "id": "structure",
+      "title": "C Program Structure",
+      "content": "Every C program has a standard structure that includes headers, the main function, and statements. Understanding this structure is crucial as every program you write will follow this pattern.\n\nAt the top of your program, you include header files using #include. Header files contain declarations of functions and types that you want to use in your program. The most common is stdio.h (Standard Input/Output), which contains functions like printf() for printing text to the screen and scanf() for reading input from the keyboard.\n\nEvery C program must have a main() function. This is the entry point—when you run your program, execution always starts at the beginning of main(). The main function returns an integer value to the operating system, indicating whether the program completed successfully (0) or encountered an error (non-zero). This integer return value is specified using the return statement.\n\nInside main(), you write statements that define what your program does. Statements are instructions that perform actions, and each statement must end with a semicolon. Your code is executed sequentially from top to bottom, unless you use control structures like loops or conditional statements to change the flow.\n\nThe basic pattern is: headers at top, then the main function, then your code inside main, and finally return 0 to indicate success. This simple structure scales to very large and complex programs—thousands of lines of code all follow this basic organizational principle.",
+      "codeExample": "#include <stdio.h>\n#include <stdlib.h>\n\nint main() {\n    // Your code goes here\n    printf(\"Program starts here\\n\");\n    \n    // Do useful work\n    \n    return 0;  // Indicate success\n}"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Your First Program",
+    "description": "Write a simple C program that prints text",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    printf(\"Hello, World!\\n\");\n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Every C program needs #include <stdio.h>",
+      "Every program needs int main()",
+      "Use printf() to print text",
+      "Remember to return 0 at the end"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Hello Program",
+      "difficulty": "easy",
+      "description": "Write a program that prints your name",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    // TODO: Print your name using printf\n    \n    return 0;\n}",
+      "hints": [
+        "Use printf() to print text",
+        "Don't forget the \\n for a newline"
+      ],
+      "solution": "printf(\"Your Name\\n\");",
+      "expectedOutput": "Your Name"
+    }
+  ]
+}

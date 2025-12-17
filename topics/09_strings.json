@@ -1,0 +1,62 @@
+{
+  "id": "strings",
+  "order": 9,
+  "title": "Strings: Working with Text",
+  "description": "Manipulate text using character arrays and string functions in C",
+  "difficulty": "intermediate",
+  "xpReward": 150,
+  "estimatedTime": "25 min",
+  "icon": "📝",
+
+  "concepts": [
+    {
+      "id": "string_basics",
+      "title": "Understanding Strings",
+      "content": "In C, a string is a sequence of characters stored as a character array. Unlike some programming languages that have a dedicated string type, C treats strings as arrays of characters.\n\nA string in C is stored with a special character called the null terminator (\\0) at the end. This character marks the end of the string and allows C to know where the string ends. For example, the string \"Hello\" is actually stored as 'H', 'e', 'l', 'l', 'o', '\\0' - six characters total, with the last being the invisible null terminator.\n\nWhen you declare a character array that will hold a string, you must make it large enough to hold all the characters plus the null terminator. For a 5-letter word, you need an array of at least size 6. A common mistake is forgetting to account for this extra byte.\n\nYou can initialize a string directly using a string literal: char name[] = \"Alice\"; or char name[10] = \"Alice\";. C automatically adds the null terminator for you.\n\nYou can also initialize an array of characters manually: char name[6] = {'A', 'l', 'i', 'c', 'e', '\\0'};. Notice the null terminator is explicit here.\n\nStrings are used extensively in real programs for storing names, messages, file paths, and any text data. Understanding how strings work and their representation in memory is crucial for C programming.",
+      "codeExample": "// Declare strings\nchar name[20] = \"Alice\";\nchar greeting[] = \"Hello, World!\";\n\n// String literals\nprintf(\"%s\\n\", name);           // Prints: Alice\nprintf(\"%s\\n\", greeting);       // Prints: Hello, World!\n\n// Character arrays\nchar word[6] = {'W', 'o', 'r', 'l', 'd', '\\0'};\nprintf(\"%s\\n\", word);           // Prints: World"
+    },
+    {
+      "id": "string_functions",
+      "title": "String Functions",
+      "content": "The C standard library provides many useful functions for working with strings. These functions are declared in string.h, which you must include with #include <string.h>.\n\nThe strlen() function returns the length of a string (not counting the null terminator). For example, strlen(\"Hello\") returns 5.\n\nThe strcpy() function copies one string to another. The syntax is strcpy(destination, source), which copies the source string into the destination array. You must ensure the destination is large enough to hold the entire source string plus the null terminator. Failing to do so causes a buffer overflow, a serious security vulnerability.\n\nThe strcat() function concatenates (joins) two strings. strcat(str1, str2) appends str2 to the end of str1. Again, str1 must have enough space to hold both strings.\n\nThe strcmp() function compares two strings. It returns 0 if the strings are identical, a negative number if the first string comes before the second alphabetically, and a positive number if the first comes after the second. This is useful for checking if two strings are equal.\n\nThe strchr() function finds the first occurrence of a character in a string. It returns a pointer to that character, or NULL if the character is not found.\n\nThese string functions are fundamental for text processing, and understanding them is essential for C programming. However, they require careful use, especially strcpy() and strcat(), which can cause security issues if not handled correctly.",
+      "codeExample": "#include <string.h>\n#include <stdio.h>\n\nchar str1[20] = \"Hello\";\nchar str2[20] = \"World\";\nchar result[40];\n\nint len = strlen(str1);          // 5\nstrcpy(result, str1);            // result = \"Hello\"\nstrcat(result, \" \");             // result = \"Hello \"\nstrcat(result, str2);            // result = \"Hello World\"\nint cmp = strcmp(str1, \"Hello\");  // 0 (equal)\n\nprintf(\"%s\\n\", result);           // Prints: Hello World"
+    },
+    {
+      "id": "string_input",
+      "title": "Reading String Input",
+      "content": "Getting string input from the user is a common task. C provides several methods, each with different characteristics.\n\nThe simplest is scanf() with the %s format specifier: scanf(\"%s\", name);. This reads a string from the user until it encounters a space or newline. The main problem with this approach is that it doesn't check how much data it's reading, making it vulnerable to buffer overflow attacks. If the user enters more characters than the array can hold, extra characters will overflow into adjacent memory.\n\nA safer approach is to specify the maximum number of characters: scanf(\"%9s\", name); for a 10-character array. This tells scanf() to read at most 9 characters, leaving room for the null terminator.\n\nAnother method is gets_s(), which is a safer version of gets() that checks array bounds: gets_s(name, 20); reads at most 19 characters into a 20-element array.\n\nThe fgets() function is another option: fgets(name, 20, stdin);. It reads up to 19 characters from standard input and includes the newline character in the string if there's room.\n\nWhen reading strings, always remember that the array must be large enough for the string plus the null terminator. It's good practice to use functions that check bounds to prevent buffer overflow vulnerabilities.",
+      "codeExample": "#include <stdio.h>\n#include <string.h>\n\nchar name[50];\nchar message[100];\n\nprintf(\"Enter your name: \");\nscanf(\"%49s\", name);  // Safe: at most 49 chars for 50-element array\n\nprintf(\"Enter a message: \");\nfgets(message, 100, stdin);  // Safe: reads at most 99 chars\n\nprintf(\"Hello, %s!\\n\", name);\nprintf(\"Your message: %s\", message);"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Work with Strings",
+    "description": "Manipulate text and use string functions",
+    "defaultCode": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char greeting[30] = \"Hello\";\n    char name[20];\n    \n    printf(\"Enter your name: \");\n    scanf(\"%19s\", name);\n    \n    strcat(greeting, \" \");\n    strcat(greeting, name);\n    \n    printf(\"%s\\n\", greeting);\n    printf(\"Length: %lu\\n\", strlen(greeting));\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Include <string.h> for string functions",
+      "Strings end with \\0 (null terminator)",
+      "strlen() returns string length",
+      "strcat() joins two strings",
+      "Always allocate enough space for strings"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "String Length",
+      "difficulty": "easy",
+      "description": "Find the length of a string",
+      "starterCode": "#include <stdio.h>\n#include <string.h>\n\nint main() {\n    char text[20] = \"Programming\";\n    \n    // TODO: Find and print the length of text\n    \n    return 0;\n}",
+      "hints": [
+        "Use strlen() function",
+        "Include <string.h>",
+        "Use %lu or %d format specifier"
+      ],
+      "solution": "printf(\"Length: %lu\\n\", strlen(text));",
+      "expectedOutput": "Length: 11"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "dynamicmemory",
+  "order": 12,
+  "title": "Dynamic Memory Allocation",
+  "description": "Allocate memory at runtime and manage dynamic data structures",
+  "difficulty": "advanced",
+  "xpReward": 200,
+  "estimatedTime": "30 min",
+  "icon": "💾",
+
+  "concepts": [
+    {
+      "id": "malloc",
+      "title": "Allocating Memory with malloc",
+      "content": "Dynamic memory allocation allows you to request memory from the system while your program runs. Unlike arrays, which have fixed sizes determined at compile time, dynamically allocated memory can grow and shrink during execution.\n\nThe malloc() function (memory allocate) reserves a block of memory and returns a pointer to it. The syntax is: int *ptr = (int *)malloc(10 * sizeof(int));. This allocates space for 10 integers and returns a pointer to the first byte.\n\nThe sizeof() operator tells you how many bytes each integer needs (usually 4), so 10 * sizeof(int) gives the total bytes needed. The (int *) cast converts the generic pointer returned by malloc() to an integer pointer.\n\nIt's crucial to always check if malloc() succeeded: if (ptr == NULL) { /* handle error */ }. malloc() returns NULL if it can't allocate the requested memory (out of memory).\n\nOnce you have a pointer, you can use array notation to access elements: ptr[0] = 42;. Dynamically allocated memory works just like arrays, but you decide the size at runtime based on your needs.\n\nDynamic allocation is essential for programs that need to work with amounts of data that aren't known until the program runs. For example, reading an unknown number of student records or storing search results of unknown size.",
+      "codeExample": "#include <stdlib.h>\n#include <stdio.h>\n\nint main() {\n    int *arr = (int *)malloc(5 * sizeof(int));\n    \n    if (arr == NULL) {\n        printf(\"Memory allocation failed!\\n\");\n        return 1;\n    }\n    \n    // Use the allocated memory\n    for (int i = 0; i < 5; i++) {\n        arr[i] = i * 10;\n    }\n    \n    for (int i = 0; i < 5; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    \n    return 0;\n}"
+    },
+    {
+      "id": "free",
+      "title": "Freeing Memory with free",
+      "content": "When you finish using dynamically allocated memory, you must release it back to the system using free(). Memory that isn't freed becomes unavailable to other programs and causes a memory leak.\n\nThe syntax is simple: free(ptr);. This releases the memory that ptr points to. After calling free(), you should set the pointer to NULL: ptr = NULL;. This prevents accidentally using a dangling pointer (a pointer to freed memory).\n\nA common mistake is losing track of allocated memory. If you do ptr = malloc(100); then ptr = malloc(200); without freeing the first allocation, you leak the first 100 bytes. Always remember to free before reassigning pointers.\n\nMemory management is one of the hardest parts of C programming. It's your responsibility to:\n1. Allocate memory when you need it\n2. Use it carefully\n3. Free it when done\n4. Avoid using freed memory\n\nFailure in any of these causes bugs that are hard to track down. Modern languages automate this, but C puts you in control, which requires discipline.\n\nA useful pattern is to immediately free memory after you're done with it. Don't accumulate allocations hoping to free them later—free them as soon as possible. This reduces the chance of leaks.",
+      "codeExample": "#include <stdlib.h>\n#include <stdio.h>\n\nint main() {\n    int *ptr = (int *)malloc(10 * sizeof(int));\n    \n    if (ptr == NULL) {\n        printf(\"Allocation failed!\\n\");\n        return 1;\n    }\n    \n    // Use memory\n    ptr[0] = 42;\n    printf(\"Value: %d\\n\", ptr[0]);\n    \n    // Free memory\n    free(ptr);\n    ptr = NULL;  // Good practice\n    \n    // Don't use ptr after freeing!\n    // printf(\"%d\\n\", ptr[0]);  // BUG!\n    \n    return 0;\n}"
+    },
+    {
+      "id": "calloc_realloc",
+      "title": "calloc() and realloc()",
+      "content": "Besides malloc(), C provides other allocation functions with different characteristics.\n\ncalloc() allocates memory and initializes it to zero: int *arr = (int *)calloc(10, sizeof(int));. This is useful when you need zeroed-out memory. It takes two arguments: the number of elements and the size of each element. calloc(10, sizeof(int)) allocates space for 10 integers, all initialized to 0.\n\nrealloc() resizes previously allocated memory: int *new_ptr = (int *)realloc(ptr, new_size);. If you have 10 integers allocated and need 20, realloc() adjusts the block, preserving existing data if possible. It returns a new pointer, which might differ from the original if the block was moved in memory.\n\nImportant: Always use the return value from realloc(): ptr = realloc(ptr, new_size);. If realloc() fails, it returns NULL, and your original ptr is still valid but unchanged. If you do ptr = realloc(...) and it fails, you lose the original pointer, causing a leak.\n\nThe safe pattern for realloc() is: int *temp = realloc(ptr, new_size); if (temp) { ptr = temp; } else { /* handle error */ }.\n\nThese functions let you manage memory flexibly, allocating and adjusting as your program's needs change. Understanding all three—malloc(), calloc(), and realloc()—gives you complete control over memory management.",
+      "codeExample": "#include <stdlib.h>\n#include <stdio.h>\n\nint main() {\n    // Allocate 5 integers (zeroed)\n    int *arr = (int *)calloc(5, sizeof(int));\n    \n    if (arr == NULL) return 1;\n    \n    for (int i = 0; i < 5; i++) {\n        arr[i] = i;\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n    \n    // Resize to 10 elements\n    int *temp = (int *)realloc(arr, 10 * sizeof(int));\n    if (temp == NULL) {\n        free(arr);\n        return 1;\n    }\n    arr = temp;\n    \n    for (int i = 5; i < 10; i++) {\n        arr[i] = i * 2;\n    }\n    \n    free(arr);\n    return 0;\n}"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Manage Dynamic Memory",
+    "description": "Allocate and free memory dynamically",
+    "defaultCode": "#include <stdlib.h>\n#include <stdio.h>\n\nint main() {\n    int size = 5;\n    int *arr = (int *)malloc(size * sizeof(int));\n    \n    if (arr == NULL) {\n        printf(\"Memory allocation failed!\\n\");\n        return 1;\n    }\n    \n    // Fill array\n    for (int i = 0; i < size; i++) {\n        arr[i] = i * 10;\n    }\n    \n    // Print array\n    for (int i = 0; i < size; i++) {\n        printf(\"%d \", arr[i]);\n    }\n    printf(\"\\n\");\n    \n    // Free memory\n    free(arr);\n    arr = NULL;\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Include <stdlib.h> for malloc() and free()",
+      "Always check if malloc() returned NULL",
+      "Use sizeof() to get correct byte size",
+      "Always free() memory when done",
+      "Set pointer to NULL after freeing"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Allocate and Use Memory",
+      "difficulty": "intermediate",
+      "description": "Dynamically allocate space for 3 numbers and print them",
+      "starterCode": "#include <stdlib.h>\n#include <stdio.h>\n\nint main() {\n    // TODO: Allocate memory for 3 integers\n    \n    // TODO: Set values and print\n    \n    // TODO: Free the memory\n    \n    return 0;\n}",
+      "hints": [
+        "Use malloc(3 * sizeof(int))",
+        "Check for NULL",
+        "Use array notation to access",
+        "Call free() at the end"
+      ],
+      "solution": "int *arr = (int *)malloc(3 * sizeof(int));\nif (arr) {\n    arr[0] = 10; arr[1] = 20; arr[2] = 30;\n    for (int i = 0; i < 3; i++) printf(\"%d \", arr[i]);\n    free(arr);\n}",
+      "expectedOutput": "10 20 30"
+    }
+  ]
+}

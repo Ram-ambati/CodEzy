@@ -1,0 +1,31 @@
+{
+  "demo": {
+    "email": "demo@example.com",
+    "password": "2c26b46911185131006ba5df1324b046c58ac342249e7823bc24d81a0e4e6f61",
+    "xp": 150,
+    "createdAt": "2025-01-01T00:00:00",
+    "completedTopics": [
+      "variables"
+    ],
+    "achievements": [
+      {
+        "title": "First Steps",
+        "icon": "\u00f0\u0178\u0161\u20ac",
+        "description": "Complete your first topic"
+      }
+    ],
+    "viewedTopics": [
+      "variables",
+      "loops"
+    ]
+  },
+  "testuser": {
+    "email": "test@example.com",
+    "password": "d9b5f58f0b38198293971865a14074f59eba3e82595becbe86ae51f1d9f1f65e",
+    "xp": 0,
+    "createdAt": "2025-12-07T13:53:43.689536",
+    "completedTopics": [],
+    "achievements": [],
+    "viewedTopics": []
+  }
+}

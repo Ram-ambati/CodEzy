@@ -1,0 +1,157 @@
+{
+  "id": "variables",
+  "order": 2,
+  "title": "Variables & Data Types",
+  "description": "Master variable declaration, data types, and memory management in C",
+  "difficulty": "beginner",
+  "xpReward": 100,
+  "estimatedTime": "15 min",
+  "icon": "📦",
+
+  "concepts": [
+    {
+      "id": "var_intro",
+      "title": "Variable Declaration & Initialization",
+      "content": "Variables are the fundamental building blocks of any C program. A variable is essentially a named container that holds a value in your computer's memory. When you declare a variable, you're telling the C compiler to reserve a specific amount of memory space for storing data. The declaration process involves specifying two critical pieces of information: the data type and the variable name.\n\nThe data type tells the compiler how much memory to allocate and what kind of values can be stored in that variable. For example, an integer variable requires a different amount of memory than a floating-point variable. The variable name is an identifier that you choose, which allows you to refer to that memory location throughout your program.\n\nWhen you declare a variable, it's important to understand that you're not actually creating the value yet—you're just setting up the container. Initialization is the process of giving that variable an initial value. You can declare a variable without initializing it, but the variable will contain whatever random value happened to be in that memory location previously (called \"garbage value\"). This is why it's considered good practice to always initialize variables when you declare them.\n\nThe syntax for declaring and initializing a variable is straightforward: you write the data type, followed by the variable name, then an equals sign, and finally the initial value, ending with a semicolon. For instance, 'int age = 25;' declares an integer variable named 'age' and initializes it with the value 25. You can also declare multiple variables of the same type on a single line by separating them with commas, such as 'int x = 10, y = 20, z = 30;'.\n\nVariable names follow specific rules: they must start with a letter (A-Z, a-z) or an underscore (_), and subsequent characters can be letters, digits (0-9), or underscores. Variable names are case-sensitive, meaning 'age' and 'Age' are considered different variables. It's conventional to use meaningful names that describe what the variable stores, such as 'studentAge' or 'averageGrade', rather than single letters like 'a' or 'b'. This makes your code more readable and maintainable.\n\nUnderstanding variable declaration and initialization is crucial because it forms the foundation of programming. Every program you write will involve declaring variables to store the data your program manipulates. Whether you're storing user input, performing calculations, or managing program state, variables are essential. The scope of a variable (where it can be used) and its lifetime (how long it exists) are also determined by where and how you declare it, making proper declaration practices important for writing reliable programs.",
+      "codeExample": "int age = 25;           // Integer variable\nfloat height = 5.9;     // Float variable\nchar grade = 'A';       // Character variable\nint x = 10, y = 20;     // Multiple variables",
+      "visualization": {
+        "type": "table",
+        "title": "Variable Memory Layout",
+        "description": "How variables are stored in memory",
+        "config": {
+          "columns": ["name", "type", "value", "address", "size"],
+          "columnLabels": ["Variable", "Type", "Value", "Address", "Size"]
+        },
+        "data": {
+          "rows": [
+            {"name": "age", "type": "int", "value": "25", "address": "0x7fff5fbff8ac", "size": "4 bytes"},
+            {"name": "height", "type": "float", "value": "5.9", "address": "0x7fff5fbff8b0", "size": "4 bytes"},
+            {"name": "grade", "type": "char", "value": "'A'", "address": "0x7fff5fbff8b4", "size": "1 byte"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "data_types",
+      "title": "Basic Data Types in C",
+      "content": "C provides a variety of built-in data types that allow you to store different kinds of information. Each data type has a specific purpose and occupies a specific amount of memory in your computer's RAM. Understanding these types is essential for writing efficient programs that handle different categories of data appropriately.\n\nThe integer type (int) is one of the most commonly used data types. It stores whole numbers—both positive and negative—but cannot store decimal values. On most modern systems, an integer occupies 4 bytes of memory (32 bits), which allows it to store values ranging from approximately -2.1 billion to 2.1 billion. The short type is a smaller integer type that uses 2 bytes and has a more limited range, while the long type uses 8 bytes and can store much larger numbers.\n\nFor storing numbers with decimal points, C provides floating-point types. The float type uses 4 bytes and can represent numbers with approximately 6-7 significant decimal digits. The double type uses 8 bytes and provides approximately 15-17 significant decimal digits, making it more precise for calculations that require higher accuracy. This precision difference is important in scientific and financial applications where accuracy is critical.\n\nThe char type is specifically designed for storing single characters. It uses only 1 byte of memory and can store any character from your keyboard, including letters, digits, and special symbols. Internally, characters are actually stored as small integer values according to the ASCII (American Standard Code for Information Interchange) standard, where 'A' is stored as 65, 'B' as 66, and so on.\n\nThere's also the void type, which is somewhat unique. The void type is used to indicate the absence of a type. It's commonly used to specify that a function returns no value or to declare generic pointers that can point to any data type. Understanding void is important when you start working with functions and pointers.\n\nChoosing the right data type for your needs is important for several reasons. First, it affects memory usage—using a double when an int would suffice wastes memory. Second, it affects precision—using a float for financial calculations might introduce rounding errors, so double is preferred. Third, it can affect program performance, as different types are processed at different speeds by the computer's processor. As you write more programs, selecting appropriate data types becomes second nature and is considered a mark of good programming practice.",
+      "codeExample": "int count = 100;              // Integers: -2^31 to 2^31-1\nfloat price = 99.99;          // Floats: ~6-7 decimal digits\ndouble pi = 3.14159265359;   // Doubles: ~15-17 decimal digits\nchar initial = 'A';           // Characters: single character\nshort value = 32767;          // Short int: -32768 to 32767\nlong big = 9223372036854775807LL; // Long integer",
+      "visualization": {
+        "type": "table",
+        "title": "Data Types and Sizes",
+        "description": "Comparison of C data types",
+        "config": {
+          "columns": ["type", "size", "range", "example"],
+          "columnLabels": ["Type", "Size", "Range", "Example"]
+        },
+        "data": {
+          "rows": [
+            {"type": "char", "size": "1 byte", "range": "-128 to 127", "example": "'A'"},
+            {"type": "int", "size": "4 bytes", "range": "-2,147,483,648 to 2,147,483,647", "example": "42"},
+            {"type": "short", "size": "2 bytes", "range": "-32,768 to 32,767", "example": "100"},
+            {"type": "long", "size": "8 bytes", "range": "-9,223,372,036,854,775,808 to 9,223,372,036,854,775,807", "example": "999999999L"},
+            {"type": "float", "size": "4 bytes", "range": "~1.2e-38 to 3.4e38", "example": "3.14f"},
+            {"type": "double", "size": "8 bytes", "range": "~2.2e-308 to 1.8e308", "example": "3.14159265359"}
+          ]
+        }
+      }
+    },
+    {
+      "id": "memory",
+      "title": "Understanding Memory",
+      "content": "Memory is your computer's workspace—it's where all data is stored while your program is running. Understanding how memory works is crucial for becoming a proficient C programmer. Every time you declare a variable, the computer allocates a specific portion of memory for that variable, and that portion has a unique address that identifies its location.\n\nMemory addresses are like house addresses on a street—each house (memory location) has a unique address that allows you to find it. In C, addresses are typically shown in hexadecimal notation (base 16), starting with 0x, such as 0x7fff5fbff8ac. You can access the address of any variable using the address-of operator (&). For example, &age gives you the memory address where the variable age is stored.\n\nThe sizeof() operator is your tool for determining how much memory a data type uses. This is crucial information because different data types consume different amounts of memory. On most systems, sizeof(char) returns 1, sizeof(int) returns 4, sizeof(float) returns 4, and sizeof(double) returns 8. However, these sizes can vary depending on your compiler and computer architecture, which is why using sizeof() is more reliable than assuming fixed sizes.\n\nMemory management is one of the most important concepts in C programming. Unlike some modern programming languages that automatically manage memory, C puts you in control. This gives you tremendous power to optimize your programs, but it also makes it your responsibility to manage memory correctly. Variables declared inside a function (local variables) are created on the stack, a region of memory that automatically grows and shrinks. When a function ends, the stack space for its local variables is automatically freed.\n\nFor larger programs or when you need data that persists longer than a function's execution, you use dynamic memory allocation with functions like malloc() and free(). This allows you to explicitly request memory from the heap and release it when you're done. Not releasing dynamically allocated memory when you're finished using it causes a memory leak, where memory accumulates and is unavailable for other uses, potentially slowing down or crashing your program.\n\nUnderstanding memory is essential for writing correct, efficient programs. It helps you understand why certain operations are faster or slower, why your program might crash, and how to debug issues. As you progress in your programming journey, memory concepts become increasingly important, especially when working with pointers, arrays, and dynamic data structures.",
+      "codeExample": "#include <stdio.h>\n\nint main() {\n    int age = 25;\n    float height = 5.9;\n    \n    printf(\"Size of int: %lu bytes\\n\", sizeof(int));\n    printf(\"Size of float: %lu bytes\\n\", sizeof(float));\n    printf(\"Address of age: %p\\n\", (void*)&age);\n    printf(\"Address of height: %p\\n\", (void*)&height);\n    \n    return 0;\n}",
+      "visualization": {
+        "type": "custom",
+        "title": "Memory Addresses",
+        "description": "How sizeof() and memory addresses work",
+        "data": {
+          "html": "<div class='memory-info'><p><strong>📌 Key Concepts:</strong></p><ul><li>Memory addresses are unique for each variable</li><li>The <code>&</code> operator gives the address</li><li><code>sizeof()</code> tells how many bytes a type uses</li><li>Different types use different amounts of memory</li><li>This allows efficient memory management</li></ul></div>"
+        }
+      }
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Interactive Code Editor",
+    "description": "Write and run C code with live visualization",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    int age = 25;\n    float gpa = 3.85;\n    char grade = 'A';\n    \n    printf(\"Age: %d\\n\", age);\n    printf(\"GPA: %.2f\\n\", gpa);\n    printf(\"Grade: %c\\n\", grade);\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Use #include <stdio.h> for input/output",
+      "Every program needs a main() function",
+      "Use printf() to display output",
+      "Don't forget the semicolon at end of statements"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Declare Your Variables",
+      "difficulty": "easy",
+      "description": "Declare 3 variables: an integer 'score' = 95, a float 'rating' = 4.5, and a char 'section' = 'B'",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    // TODO: Declare three variables here\n    \n    \n    printf(\"Score: %d\\n\", score);\n    printf(\"Rating: %.1f\\n\", rating);\n    printf(\"Section: %c\\n\", section);\n    \n    return 0;\n}",
+      "hints": [
+        "Use: type name = value;",
+        "Don't forget the semicolon",
+        "char values use single quotes"
+      ],
+      "solution": "int score = 95;\nfloat rating = 4.5;\nchar section = 'B';",
+      "expectedOutput": "Score: 95\nRating: 4.5\nSection: B",
+      "xpReward": 25
+    },
+    {
+      "id": "challenge_2",
+      "title": "Print Variable Sizes",
+      "difficulty": "medium",
+      "description": "Write code to print the size of int, float, double, and char using sizeof()",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    // TODO: Use sizeof() to print sizes of different data types\n    \n    return 0;\n}",
+      "hints": [
+        "Use sizeof(type)",
+        "Use printf with %lu for size_t",
+        "Include <stdio.h> for printf"
+      ],
+      "solution": "printf(\"Size of int: %lu bytes\\n\", sizeof(int));\nprintf(\"Size of float: %lu bytes\\n\", sizeof(float));\nprintf(\"Size of double: %lu bytes\\n\", sizeof(double));\nprintf(\"Size of char: %lu bytes\\n\", sizeof(char));",
+      "xpReward": 30
+    },
+    {
+      "id": "challenge_3",
+      "title": "Memory Addresses",
+      "difficulty": "hard",
+      "description": "Declare variables and print their memory addresses using the & operator",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    // TODO: Declare some variables and print their addresses\n    \n    return 0;\n}",
+      "hints": [
+        "Use the & operator to get the address",
+        "Use %p format specifier for pointers",
+        "Cast to (void*) for proper printing"
+      ],
+      "solution": "int x = 10;\nfloat y = 3.14;\nprintf(\"Address of x: %p\\n\", (void*)&x);\nprintf(\"Address of y: %p\\n\", (void*)&y);",
+      "xpReward": 40
+    }
+  ],
+
+  "achievements": [
+    {
+      "id": "ach_var_starter",
+      "title": "Variable Explorer",
+      "description": "Complete the Variables & Data Types topic",
+      "icon": "🚀",
+      "xpReward": 50
+    },
+    {
+      "id": "ach_var_master",
+      "title": "Data Type Master",
+      "description": "Score 100% on the Variables quiz",
+      "icon": "🏆",
+      "xpReward": 100
+    },
+    {
+      "id": "ach_var_coder",
+      "title": "Variable Coder",
+      "description": "Complete all 3 variable challenges",
+      "icon": "💻",
+      "xpReward": 75
+    }
+  ]
+}

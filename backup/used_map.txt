@@ -1,0 +1,602 @@
+${currentTopic.difficulty}
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: className assign
+
+2
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+3s
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+8
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+achievements-grid
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+active
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+
+address
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+ai-chat-close-btn
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+ai-chat-container
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+ai-chat-section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+ai-chat-sidebar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+ai-feedback-content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+ai-feedback-section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+array-cell
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+array-container
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+array-diagram
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+array-index
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+array-value
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+bot-message
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+btn
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+btn-primary
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+btn-secondary
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+challenge-actions
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+challenge-body
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+challenge-card
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: className assign
+
+challenge-description
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+challenge-header
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+challenges-container
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+chat-input
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+chat-input-area
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+chat-message
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+chat-messages
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+chat-send-btn
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+closed
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+
+code-actions
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+code-editor
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+code-editor-section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+code-editor-wrapper
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+code-section-content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+codeExample
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+concept-badge
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+concept-body
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+concept-card
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: className assign
+
+concept-header
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+concept-text
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+concept-title-section
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+concepts-container
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+condition
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+container
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+content-column-main
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+content-grid
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+data-table
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+description
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+difficulty-badge
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: className assign
+
+entries
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+error
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+execution-stats
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+execution-trace
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+fa-book
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-check-circle
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-chevron-down
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-code
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-lightbulb
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-paper-plane
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-play
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-robot
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-rotate-right
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-tasks
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-terminal
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fa-trophy
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+fas
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+feedback
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+feedback-content
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+feedback-error
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+feedback-placeholder
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+feedback-text
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+flow-arrow
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+flow-box
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+flow-diagram
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+flow-step
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+gradient-text
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+h
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+hamburger-btn
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+hidden
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: classList
+
+hint
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+hints
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+html
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+join
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+key-points
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+language-
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+length
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+loading
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+map
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+message-avatar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+message-content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-actions
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-body
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-close
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-footer
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+modal-header
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+nav-left
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+nav-link
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+nav-logo-link
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+nav-right
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+navbar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+output-console
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+output-error
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+output-placeholder
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+output-section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+output-status
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+output-success
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+output-visualization
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointer-arrow
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointer-diagram
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointer-item
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointer-name
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointer-target
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+pointsTo
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+profile-avatar
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+profile-details
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+profile-info
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+profile-stat
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+progress-bar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+progress-bar-container
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+progress-stats
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+section-header
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+section-subtitle
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+section-title-text
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+section-toggle-icon
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: querySelector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: querySelector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+sidebar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+sidebar-section
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+sidebar-section-content
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+sidebar-section-header
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+small
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+stat-item
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+title
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+topic-btn
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: className assign
+
+topic-btn-content
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+topic-description
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-difficulty
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+topic-duration
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-header
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-header-left
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-header-top
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-icon
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+topic-info
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-meta
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-name
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+topic-progress
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topic-title
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+topics-list
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+trace-line
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+trace-step
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+trace-vars
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+user-avatar
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+user-badge
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+user-info
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+user-name
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+user-xp
+  - C:\Users\ambat\Desktop\CodEzy\static\learn.html: class attribute
+
+var-item
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+variables
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: string selector
+
+visualization-container
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+viz-error
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+viz-placeholder
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+
+viz-type-
+  - C:\Users\ambat\Desktop\CodEzy\js\learn.js: inline HTML in JS
+

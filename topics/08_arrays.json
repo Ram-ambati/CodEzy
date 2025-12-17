@@ -1,0 +1,60 @@
+{
+  "id": "arrays",
+  "order": 8,
+  "title": "Arrays: Collections of Data",
+  "description": "Work with arrays to store and manipulate multiple values of the same type",
+  "difficulty": "intermediate",
+  "xpReward": 150,
+  "estimatedTime": "25 min",
+  "icon": "📦",
+
+  "concepts": [
+    {
+      "id": "array_basics",
+      "title": "Array Fundamentals",
+      "content": "An array is a collection of elements of the same data type stored in contiguous memory locations. Arrays allow you to store multiple values in a single variable, making it much easier to work with groups of related data.\n\nWhen you declare an array, you specify the data type of the elements, the name of the array, and the number of elements it will hold. For example, int numbers[5]; declares an array named numbers that can hold 5 integers. The number in square brackets is called the array size or dimension.\n\nArray elements are accessed using an index, which starts at 0 for the first element. So in a 5-element array, valid indices are 0, 1, 2, 3, and 4. To access the third element, you use numbers[2]. Using an invalid index (like numbers[5] in a 5-element array) causes undefined behavior and can crash your program or produce incorrect results.\n\nYou can initialize an array when you declare it by providing values in curly braces. For example, int numbers[3] = {10, 20, 30}; creates an array with three elements initialized to these values. If you provide fewer values than the array size, the remaining elements are initialized to zero.\n\nArrays are stored in memory as contiguous blocks, meaning each element is stored right next to the previous one. This makes arrays very efficient for accessing elements, as the computer can calculate the exact memory location of any element instantly. Arrays are fundamental data structures used extensively in programming for storing lists, tables, and sequences of data.",
+      "codeExample": "int scores[5] = {85, 90, 78, 92, 88};\nint first = scores[0];   // 85\nint third = scores[2];   // 78\nscores[1] = 95;          // Change second element\n\nchar letters[3] = {'a', 'b', 'c'};\nprintf(\"%c\\n\", letters[0]);  // Prints: a"
+    },
+    {
+      "id": "array_loops",
+      "title": "Iterating Through Arrays",
+      "content": "One of the most common operations with arrays is iterating through them using loops. This allows you to process each element systematically.\n\nThe for loop is perfect for arrays because you know exactly how many iterations you need—one for each array element. You can use the loop counter as the array index. A typical pattern is: for (int i = 0; i < size; i++) which accesses elements from index 0 to size-1.\n\nWhen iterating through an array, you must ensure you don't exceed the array bounds. If an array has 5 elements (indices 0-4) and you try to access index 5, you'll access memory beyond the array, which is undefined behavior. C doesn't automatically check bounds, so you must be careful.\n\nYou can iterate through an entire array to find specific values, calculate statistics (like sum or average), or modify all elements. For example, to sum all elements in an array, you initialize a variable to 0 and add each element to it in a loop.\n\nUnderstanding how to work with arrays through loops is essential because arrays and loops are used together constantly in real programs. Most real-world programming involves processing collections of data, which is exactly what array iteration does.",
+      "codeExample": "int arr[5] = {10, 20, 30, 40, 50};\nint sum = 0;\n\n// Calculate sum\nfor (int i = 0; i < 5; i++) {\n    sum += arr[i];\n}\nprintf(\"Sum: %d\\n\", sum);  // Sum: 150\n\n// Print all elements\nfor (int i = 0; i < 5; i++) {\n    printf(\"%d \", arr[i]);\n}  // Prints: 10 20 30 40 50"
+    },
+    {
+      "id": "2d_arrays",
+      "title": "Multidimensional Arrays",
+      "content": "While one-dimensional arrays store a single list of elements, multidimensional arrays store data in multiple dimensions. The most common is the 2D array, which is like a table with rows and columns.\n\nYou declare a 2D array by specifying two dimensions: int matrix[3][4]; creates an array with 3 rows and 4 columns. You can think of this as 3 rows, each containing 4 elements.\n\nTo access an element in a 2D array, you use two indices: matrix[row][col]. For example, matrix[0][0] is the element in the first row and first column, while matrix[2][3] is the element in the third row and fourth column.\n\nYou can initialize a 2D array with nested braces: int matrix[2][3] = {{1, 2, 3}, {4, 5, 6}};. This creates a 2x3 matrix with the specified values.\n\nTo iterate through a 2D array, you use nested loops. The outer loop iterates through rows, and the inner loop iterates through columns. This gives you access to every element in the array.\n\n2D arrays are useful for representing tables, game boards, matrices, and any data that naturally has a row-column structure. Understanding multidimensional arrays opens up possibilities for more complex data organization.",
+      "codeExample": "int matrix[2][3] = {\n    {1, 2, 3},\n    {4, 5, 6}\n};\n\n// Access element at row 1, column 2\nint element = matrix[1][2];  // 6\n\n// Iterate through matrix\nfor (int i = 0; i < 2; i++) {\n    for (int j = 0; j < 3; j++) {\n        printf(\"%d \", matrix[i][j]);\n    }\n    printf(\"\\n\");\n}"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Work with Arrays",
+    "description": "Declare arrays and access their elements",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    int numbers[5] = {10, 20, 30, 40, 50};\n    \n    printf(\"First element: %d\\n\", numbers[0]);\n    printf(\"Third element: %d\\n\", numbers[2]);\n    \n    for (int i = 0; i < 5; i++) {\n        printf(\"numbers[%d] = %d\\n\", i, numbers[i]);\n    }\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Array indices start at 0",
+      "Use a for loop to iterate through arrays",
+      "Use array[index] to access elements",
+      "The size is in square brackets during declaration"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Sum Array Elements",
+      "difficulty": "easy",
+      "description": "Create an array and calculate the sum of all elements",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    int arr[4] = {10, 20, 30, 40};\n    int sum = 0;\n    \n    // TODO: Add all elements to sum using a loop\n    \n    printf(\"Sum: %d\\n\", sum);\n    return 0;\n}",
+      "hints": [
+        "Use a for loop from 0 to array size",
+        "Add each element to sum: sum += arr[i]"
+      ],
+      "solution": "for (int i = 0; i < 4; i++) {\n    sum += arr[i];\n}",
+      "expectedOutput": "Sum: 100"
+    }
+  ]
+}

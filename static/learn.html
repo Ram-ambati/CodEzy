@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn C Programming - Codezy</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' fill='%230ea5e9' font-weight='bold'>C</text></svg>" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CodeMirror CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/material-darker.min.css">
+    <link rel="stylesheet" href="/css/learn.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-left">
+    <a href="/" class="nav-logo-link">
+      <i class="fas fa-code"></i>
+      <h2 class="gradient-text">Codezy</h2>
+    </a>
+  </div>
+  
+  <div class="nav-right">
+    <a href="/" class="nav-link">Home</a>
+    <button class="hamburger-btn" id="hamburgerBtn">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <button class="user-badge" id="userBadgeBtn">
+      <span class="user-avatar" id="userAvatar">👤</span>
+      <div class="user-info">
+        <span class="user-name" id="userName">Guest</span>
+        <span class="user-xp" id="userXP">0 XP</span>
+      </div>
+    </button>
+  </div>
+</nav>
+
+<!-- USER PROFILE MODAL -->
+<div id="profileModal" class="modal hidden">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>User Profile</h2>
+      <button class="modal-close" id="closeProfileBtn">&times;</button>
+    </div>
+    <div class="modal-body" id="profileContent">
+      <!-- Filled by JS -->
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-secondary" id="logoutBtn">Logout</button>
+      <button class="btn btn-primary" id="closeProfileBtnFooter">Close</button>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN CONTAINER -->
+<div class="container">
+  <aside class="sidebar">
+    <!-- Topics Section -->
+    <div class="sidebar-section">
+      <button class="sidebar-section-header" id="topicsToggle">
+        <span class="section-title-text">
+          <i class="fas fa-book"></i> Topics
+        </span>
+        <i class="fas fa-chevron-down section-toggle-icon"></i>
+      </button>
+      <div class="sidebar-section-content" id="topicsContent">
+        <div class="topics-list" id="topicsList">
+          <!-- Filled by JS -->
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT AREA -->
+  <main class="content">
+    <!-- Topic Header -->
+    <div class="topic-header" id="topicHeader">
+      <div class="topic-header-top">
+        <div class="topic-header-left">
+          <div class="topic-info">
+            <h1 class="topic-title" id="topicTitle">Select a Topic</h1>
+            <div class="topic-meta">
+              <span class="difficulty-badge" id="difficultyBadge"></span>
+              <span class="topic-duration" id="topicDuration"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="topic-description" id="topicDescription">Choose a topic from the sidebar to begin learning</p>
+    </div>
+
+    <!-- Content Grid: Main content on left, AI chat on right -->
+    <div class="content-grid">
+      <!-- Left Column: Main Content -->
+      <div class="content-column-main">
+        
+        <!-- Code Editor Section (FIRST) -->
+        <section class="section code-editor-section" id="codeSection">
+          <div class="section-header">
+            <h2><i class="fas fa-code"></i> Code Editor</h2>
+            <p class="section-subtitle">Write and run C code</p>
+          </div>
+          <div class="code-section-content">
+            <div class="code-editor-wrapper">
+              <div id="codeEditor" class="code-editor"></div>
+            </div>
+            <div class="code-actions">
+              <button class="btn btn-secondary" id="resetCodeBtn"><i class="fas fa-rotate-right"></i> Reset</button>
+              <button class="btn btn-primary" id="runCodeBtn"><i class="fas fa-play"></i> Run Code</button>
+              <button class="btn btn-secondary" id="aiFeedbackBtn"><i class="fas fa-robot"></i> AI Feedback</button>
+            </div>
+          </div>
+        </section>
+
+        <!-- Output Section (SECOND) -->
+        <section class="section output-section" id="outputSection">
+          <div class="section-header">
+            <h2><i class="fas fa-terminal"></i> Output</h2>
+            <span class="output-status" id="outputStatus">Ready</span>
+          </div>
+          <div class="output-console" id="outputConsole">
+            <p class="output-placeholder">Click "Run Code" to see output...</p>
+          </div>
+        </section>
+
+        <!-- AI Feedback Section -->
+        <section class="section ai-feedback-section" id="aiFeedbackSection" style="display: none;">
+          <div class="section-header">
+            <h2><i class="fas fa-robot"></i> AI Feedback</h2>
+            <span id="feedbackStatus"></span>
+          </div>
+          <div class="ai-feedback-content" id="aiFeedbackContent">
+            <p class="feedback-placeholder">Run code and click "AI Feedback" to get suggestions</p>
+          </div>
+        </section>
+
+        <!-- Concepts Section -->
+        <section class="section" id="conceptsSection">
+          <div class="section-header">
+            <h2><i class="fas fa-lightbulb"></i> Key Concepts</h2>
+          </div>
+          <div class="concepts-container" id="conceptsContainer">
+            <!-- Filled by JS -->
+          </div>
+        </section>
+
+        <!-- Challenges Section -->
+        <section class="section" id="challengesSection">
+          <div class="section-header">
+            <h2><i class="fas fa-tasks"></i> Challenges</h2>
+            <p class="section-subtitle">Test your skills</p>
+          </div>
+          <div class="challenges-container" id="challengesContainer">
+            <!-- Filled by JS -->
+          </div>
+        </section>
+
+      </div>
+
+      <!-- Right Column: AI Chat Panel (STICKY SIDEBAR) -->
+      <aside class="ai-chat-sidebar" id="aiChatSidebar">
+        
+        <!-- AI Chat Section (UNLOCKED) -->
+        <section class="ai-chat-section" id="aiChatSection">
+          <div class="section-header">
+            <h2><i class="fas fa-robot"></i> AI Assistant</h2>
+            <button class="ai-chat-close-btn" id="aiChatCloseBtn" style="position: absolute; right: 16px; top: 16px; background: none; border: none; color: #0f172a; font-size: 24px; cursor: pointer;">&times;</button>
+          </div>
+          <div class="ai-chat-container" id="aiChatContainer">
+            <div class="chat-messages" id="chatMessages">
+              <div class="chat-message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                  <p>Hi! I'm your AI assistant. Ask me anything about the current topic!</p>
+                </div>
+              </div>
+            </div>
+            <div class="chat-input-area">
+              <input type="text" id="chatInput" class="chat-input" placeholder="Ask a question...">
+              <button class="chat-send-btn" id="sendChatBtn">
+                <i class="fas fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </section>
+
+      </aside>
+    </div>
+  </main>
+</div>
+
+<!-- AUTH REDIRECT MODAL -->
+<div id="authModal" class="modal hidden">
+  <div class="modal-content small">
+    <div class="modal-header">
+      <h2>Authentication Required</h2>
+    </div>
+    <div class="modal-body">
+      <p>Please sign in to continue learning.</p>
+      <div class="modal-actions">
+        <a href="/static/auth.html" class="btn btn-primary">Sign In / Sign Up</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+<script src="/js/learn.js"></script>
+</body>
+</html>

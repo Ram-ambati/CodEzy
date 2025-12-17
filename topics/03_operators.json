@@ -1,0 +1,60 @@
+{
+  "id": "operators",
+  "order": 3,
+  "title": "Operators & Expressions",
+  "description": "Learn arithmetic, logical, and comparison operators to build expressions",
+  "difficulty": "beginner",
+  "xpReward": 120,
+  "estimatedTime": "20 min",
+  "icon": "➕",
+
+  "concepts": [
+    {
+      "id": "arithmetic",
+      "title": "Arithmetic Operators",
+      "content": "Arithmetic operators perform mathematical operations on numerical values. C provides the basic operations you learned in mathematics: addition, subtraction, multiplication, division, and modulus.\n\nThe addition operator (+) adds two numbers together. For example, 5 + 3 equals 8. The subtraction operator (-) subtracts the second number from the first. So 10 - 3 equals 7. The multiplication operator (*) multiplies two numbers, where 4 * 5 equals 20.\n\nThe division operator (/) divides the first number by the second. When both operands are integers, the result is also an integer with any decimal part discarded. For example, 7 / 2 equals 3 (not 3.5). If you want the decimal result, at least one operand must be a floating-point number: 7.0 / 2 equals 3.5.\n\nThe modulus operator (%) gives the remainder after division. For example, 7 % 2 equals 1 because 7 divided by 2 is 3 with a remainder of 1. This is useful for checking if a number is even (number % 2 == 0) or for cycling through values.\n\nThese operators follow the standard order of operations (PEMDAS): multiplication and division are performed before addition and subtraction. You can use parentheses to override this order, just as in mathematics. Understanding operator precedence is important to avoid unexpected results in your calculations.",
+      "codeExample": "int a = 10, b = 3;\nint sum = a + b;        // 13\nint diff = a - b;       // 7\nint prod = a * b;       // 30\nint quot = a / b;       // 3 (integer division)\nint rem = a % b;        // 1 (remainder)"
+    },
+    {
+      "id": "comparison",
+      "title": "Comparison Operators",
+      "content": "Comparison operators compare two values and return a true or false result. In C, true is represented by 1 and false is represented by 0.\n\nThe equal to operator (==) checks if two values are the same. For example, 5 == 5 is true, but 5 == 3 is false. Don't confuse this with the assignment operator (=), which assigns a value to a variable.\n\nThe not equal to operator (!=) checks if two values are different. So 5 != 3 is true, but 5 != 5 is false.\n\nThe less than operator (<) checks if the first value is smaller than the second. 3 < 5 is true, but 5 < 3 is false. The greater than operator (>) checks if the first value is larger. 5 > 3 is true.\n\nThe less than or equal to operator (<=) and greater than or equal to operator (>=) combine the inequality checks with equality. So 3 <= 3 is true, and 5 >= 5 is true.\n\nThese operators are essential for making decisions in your programs through conditional statements like if and while. They let your program respond differently based on the values of variables.",
+      "codeExample": "int a = 10, b = 5;\nint equal = (a == b);      // 0 (false)\nint notEqual = (a != b);   // 1 (true)\nint lessThan = (a < b);    // 0 (false)\nint greaterThan = (a > b); // 1 (true)\nint lessOrEqual = (a <= b);    // 0 (false)\nint greatOrEqual = (a >= b);   // 1 (true)"
+    },
+    {
+      "id": "logical",
+      "title": "Logical Operators",
+      "content": "Logical operators combine multiple conditions into a single true or false result. They're essential for making complex decisions in your programs.\n\nThe AND operator (&&) returns true only if both conditions are true. For example, (5 > 3) && (2 < 4) is true because both conditions are true. But (5 > 3) && (2 > 4) is false because the second condition is false. This operator is useful when you need multiple conditions to all be satisfied.\n\nThe OR operator (||) returns true if at least one condition is true. For example, (5 > 10) || (2 < 4) is true because the second condition is true, even though the first is false. This operator lets your program proceed if any of several conditions are met.\n\nThe NOT operator (!) reverses the truth value. If a condition is true, !condition is false, and vice versa. For example, !(5 > 10) is true because (5 > 10) is false.\n\nThese operators follow a specific precedence: NOT is evaluated first, then AND, then OR. You can use parentheses to make your logic clearer and override this precedence. Logical operators are fundamental to controlling program flow and making intelligent decisions based on multiple criteria.",
+      "codeExample": "int age = 25, hasLicense = 1, hasInsurance = 1;\nint canDrive = (age >= 18) && hasLicense && hasInsurance;  // 1 (true)\nint goodStudent = (gpa > 3.0) || (studentAge < 20);          // depends on values\nint isNotAdult = !(age >= 18);                               // 0 (false)"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Calculate with Operators",
+    "description": "Use operators to perform calculations and comparisons",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    int num1 = 20, num2 = 8;\n    \n    printf(\"Sum: %d\\n\", num1 + num2);\n    printf(\"Product: %d\\n\", num1 * num2);\n    printf(\"Is num1 > num2? %d\\n\", num1 > num2);\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Use + for addition, - for subtraction",
+      "Use * for multiplication, / for division",
+      "Use > for greater than, < for less than",
+      "Use == to check equality"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Simple Math",
+      "difficulty": "easy",
+      "description": "Calculate the area of a rectangle with width 5 and height 3",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    int width = 5, height = 3;\n    // TODO: Calculate and print the area\n    \n    return 0;\n}",
+      "hints": [
+        "Area = width * height",
+        "Use printf to display the result"
+      ],
+      "solution": "printf(\"Area: %d\\n\", width * height);",
+      "expectedOutput": "Area: 15"
+    }
+  ]
+}

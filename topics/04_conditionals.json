@@ -1,0 +1,54 @@
+{
+  "id": "conditionals",
+  "order": 3.5,
+  "title": "Conditional Statements",
+  "description": "Control program flow with if, else if, else, and switch statements",
+  "difficulty": "beginner",
+  "xpReward": 120,
+  "estimatedTime": "20 min",
+  "icon": "🔀",
+
+  "concepts": [
+    {
+      "id": "if_else",
+      "title": "If and Else Statements",
+      "content": "Conditional statements allow your program to make decisions and execute different code based on conditions. The most basic is the if statement.\n\nThe if statement executes a block of code if a condition is true. The syntax is: if (condition) { /* code */ }. The condition must be an expression that evaluates to true (non-zero) or false (zero). For example, if (age >= 18) checks if age is at least 18.\n\nYou can add an else clause to provide code to execute if the condition is false: if (condition) { /* true code */ } else { /* false code */ }. This gives you two paths: one for when the condition is true and one for when it's false.\n\nFor multiple conditions, you use else if: if (condition1) { /* code1 */ } else if (condition2) { /* code2 */ } else { /* code3 */ }. The program evaluates conditions from top to bottom and executes the first block where the condition is true. Only one block executes, even if multiple conditions are true.\n\nYou can use comparison operators (==, !=, <, >, <=, >=) and logical operators (&&, ||, !) to build complex conditions.\n\nConditional statements are fundamental to programming because they let your program respond intelligently to different situations. Without them, programs would execute the same way every time. With conditionals, programs can adapt to user input and changing data.",
+      "codeExample": "int age = 25;\n\nif (age >= 18) {\n    printf(\"You are an adult\\n\");\n} else {\n    printf(\"You are a minor\\n\");\n}\n\nif (age < 13) {\n    printf(\"Child\\n\");\n} else if (age < 18) {\n    printf(\"Teenager\\n\");\n} else if (age < 65) {\n    printf(\"Adult\\n\");\n} else {\n    printf(\"Senior\\n\");\n}"
+    },
+    {
+      "id": "switch_statement",
+      "title": "Switch Statements",
+      "content": "When you have many conditions checking a single variable against multiple values, a switch statement is often cleaner than multiple if-else statements.\n\nThe switch statement takes a variable and compares it against multiple cases. Syntax: switch (variable) { case value: code; break; default: code; }. Each case represents a possible value, and the code after that case executes if the variable matches that value.\n\nThe break statement is crucial—it exits the switch block. Without break, execution continues to the next case (\"fall-through\"), which is usually not what you want. Fall-through can be intentional for multiple cases that do the same thing.\n\nThe default case is optional and executes if none of the cases match. It's like the else in an if-else statement.\n\nSwitch statements work best when comparing a single variable against literal values. They're more efficient and readable than long chains of if-else statements. However, they can't check conditions like (x > 5); for that you still need if-else.",
+      "codeExample": "char grade = 'B';\n\nswitch (grade) {\n    case 'A':\n        printf(\"Excellent!\\n\");\n        break;\n    case 'B':\n        printf(\"Good!\\n\");\n        break;\n    case 'C':\n        printf(\"Average\\n\");\n        break;\n    default:\n        printf(\"Invalid grade\\n\");\n}\n\n// Output: Good!"
+    }
+  ],
+
+  "codeEditor": {
+    "title": "Make Decisions",
+    "description": "Use conditionals to control program flow",
+    "defaultCode": "#include <stdio.h>\n\nint main() {\n    int score = 85;\n    \n    if (score >= 90) {\n        printf(\"Grade: A\\n\");\n    } else if (score >= 80) {\n        printf(\"Grade: B\\n\");\n    } else if (score >= 70) {\n        printf(\"Grade: C\\n\");\n    } else {\n        printf(\"Grade: F\\n\");\n    }\n    \n    return 0;\n}",
+    "language": "c",
+    "hints": [
+      "Use if for single conditions",
+      "Use if-else for two paths",
+      "Use else if for multiple conditions",
+      "Use switch for checking one variable against many values"
+    ]
+  },
+
+  "challenges": [
+    {
+      "id": "challenge_1",
+      "title": "Positive or Negative",
+      "difficulty": "easy",
+      "description": "Determine if a number is positive, negative, or zero",
+      "starterCode": "#include <stdio.h>\n\nint main() {\n    int num = 5;\n    \n    // TODO: Check if num is positive, negative, or zero\n    \n    return 0;\n}",
+      "hints": [
+        "Compare with > 0, < 0, and == 0",
+        "Use if-else if-else"
+      ],
+      "solution": "if (num > 0) {\n    printf(\"Positive\\n\");\n} else if (num < 0) {\n    printf(\"Negative\\n\");\n} else {\n    printf(\"Zero\\n\");\n}",
+      "expectedOutput": "Positive"
+    }
+  ]
+}
