@@ -14,11 +14,15 @@ A full-stack web application for learning C programming with AI-powered tutoring
 
 ## � Application Screenshots
 
-### Landing Page
-![Landing Page](static/landing.png)
+<div align="center">
+  <img src="static/landing%20page.png" width="700" alt="Landing Page">
+  <p><em>Landing Page - Topic selection and user dashboard</em></p>
+</div>
 
-### Learning Page
-![Learning Page](static/learning.png)
+<div align="center">
+  <img src="static/learning%20page.png" width="700" alt="Learning Page">
+  <p><em>Learning Page - Interactive learning with AI tutoring</em></p>
+</div>
 
 ## �🛠 Tech Stack
 
