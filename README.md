@@ -12,7 +12,15 @@ A full-stack web application for learning C programming with AI-powered tutoring
 - **Responsive UI** - Clean, modern interface for seamless learning experience
 - **RESTful API** - Fully documented endpoints for content and user management
 
-## 🛠 Tech Stack
+## � Application Screenshots
+
+### Landing Page
+![Landing Page](static/landing.png)
+
+### Learning Page
+![Learning Page](static/learning.png)
+
+## �🛠 Tech Stack
 
 **Backend:**
 - Flask (Python) - REST API & server-side routing
