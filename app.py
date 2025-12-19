@@ -34,7 +34,7 @@ def add_cors_headers(response):
 
 TOPICS_DIR = 'topics'
 USERS_FILE = 'users.json'
-GROQ_API_KEY = '...---...'
+GROQ_API_KEY = 'your-key-here'
 
 # ========== USER MANAGEMENT ==========
 def load_users():
@@ -604,4 +604,4 @@ def server_error(error):
 # ========== MAIN ==========
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(host='0.0.0.0', port=5000)
